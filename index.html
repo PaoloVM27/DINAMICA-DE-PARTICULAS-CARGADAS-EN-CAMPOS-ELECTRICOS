@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Partículas Cargadas</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        
+        <div class="w-full md:w-1/3 lg:w-1/4 p-4 bg-gray-800 shadow-lg overflow-y-auto" style="max-height: 100vh;">
+            <h1 class="text-2xl font-bold text-white mb-6">Simulador de Partículas</h1>
+
+            <div class="mb-6">
+                <h2 class="text-lg font-semibold text-blue-400 mb-3">Controles</h2>
+                <div class="grid grid-cols-3 gap-2">
+                    <button id="start-sim" class="btn btn-primary">Iniciar</button>
+                    <button id="stop-sim" class="btn btn-secondary">Pausar</button>
+                    <button id="reset-sim" class="btn btn-danger">Reiniciar</button>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-lg font-semibold text-blue-400 mb-3">Parámetros de la Partícula</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="charge">Carga (q)</label>
+                        <input type="number" id="charge" value="1" step="0.1">
+                    </div>
+                    <div>
+                        <label for="mass">Masa (m)</label>
+                        <input type="number" id="mass" value="1" step="0.1" min="0.1">
+                    </div>
+                    <div>
+                        <label for="x0">Posición X₀</label>
+                        <input type="number" id="x0" value="-5" step="0.5">
+                    </div>
+                    <div>
+                        <label for="y0">Posición Y₀</label>
+                        <input type="number" id="y0" value="0" step="0.5">
+                    </div>
+                    <div>
+                        <label for="vx0">Velocidad Vₓ₀</label>
+                        <input type="number" id="vx0" value="0" step="0.5">
+                    </div>
+                    <div>
+                        <label for="vy0">Velocidad Vᵧ₀</label>
+                        <input type="number" id="vy0" value="5" step="0.5">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-lg font-semibold text-blue-400 mb-3">Configuración del Campo</h2>
+                <div>
+                    <label for="field-type">Tipo de Campo</label>
+                    <select id="field-type">
+                        <option value="uniform-e">1. Campo Eléctrico Uniforme (Parábola)</option>
+                        <option value="uniform-b">2. Campo Magnético Uniforme (Círculo)</option>
+                        <option value="radial-e">3. Campo Eléctrico Radial (Órbita)</option>
+                    </select>
+                </div>
+
+                <div class="mt-4">
+                    <label for="preset-examples">Ejemplos Predeterminados</label>
+                    <select id="preset-examples">
+                        </select>
+                </div>
+
+                <div id="uniform-e-inputs" class="mt-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="field-ex">Intensidad Campo Eₓ</label>
+                            <input type="number" id="field-ex" value="0.5" step="0.1">
+                        </div>
+                        <div>
+                            <label for="field-ey">Intensidad Campo Eᵧ</label>
+                            <input type="number" id="field-ey" value="0" step="0.1">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="uniform-b-inputs" class="mt-4 hidden">
+                    <label for="field-bz">Intensidad Campo Bₛ (fuera del plano)</label>
+                    <input type="number" id="field-bz" value="1" step="0.1">
+                </div>
+
+                <div id="radial-e-inputs" class="mt-4 hidden">
+                    <label for="field-kq">Carga Central (k * Q)</label>
+                    <input type="number" id="field-kq" value="-100" step="10">
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-lg font-semibold text-blue-400 mb-3">Visualización</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="trail-length">Longitud de Estela (puntos)</label>
+                        <input type="number" id="trail-length" value="1000" step="100" min="10">
+                    </div>
+                    <div >
+                        <label for="zoom">Zoom (Píxeles / unidad)</label>
+                        <input type="number" id="zoom" value="40" step="5" min="5">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-grow" style="height: 100vh;">
+            <canvas id="simulationCanvas"></canvas>
+        </div>
+
+    </div>
+
+    <script type="module" src="scripts.js"></script>
+</body>
+</html>
