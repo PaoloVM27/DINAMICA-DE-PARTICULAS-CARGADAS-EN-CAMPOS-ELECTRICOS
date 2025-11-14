@@ -32,9 +32,8 @@ donde:
 𝑞: carga de la partícula
 
 $$
-\vec{E}
+\vec{E} : campo eléctrico
 $$
-: campo eléctrico
 
 $$
 \vec{v}
