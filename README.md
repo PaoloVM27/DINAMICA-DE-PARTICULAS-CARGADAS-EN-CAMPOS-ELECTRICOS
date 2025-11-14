@@ -5,11 +5,11 @@
 Este proyecto es un simulador interactivo en 2D que permite estudiar el comportamiento dinámico de una partícula cargada bajo campos eléctricos y magnéticos.
 Está diseñado para apoyar el aprendizaje desde dos enfoques complementarios:
 
-✔ Enfoque Analítico
+**✔ Enfoque Analítico**
 
 Permite comparar las trayectorias obtenidas mediante ecuaciones físicas conocidas (parábolas, círculos, órbitas elípticas, etc.) con los casos simulados.
 
-✔ Enfoque Computacional
+**✔ Enfoque Computacional**
 
 El simulador implementa una integración numérica estable basada en la fuerza de Lorentz, permitiendo visualizar movimientos complejos que no tienen solución exacta.
 
@@ -19,7 +19,7 @@ El usuario puede seleccionar tipos de campo, modificar parámetros, cargar ejemp
 
 Este simulador está basado en las ecuaciones fundamentales del electromagnetismo clásico y la dinámica newtoniana. Las fórmulas implementadas en el código representan directamente la física del movimiento de una partícula cargada.
 
-1. Fuerza de Lorentz (Ecuación Fundamental)
+**1. Fuerza de Lorentz (Ecuación Fundamental)**
 
 La fuerza total sobre la partícula es:
 
@@ -44,7 +44,7 @@ $$
 
 Esta es la ecuación central modelada en el simulador.
 
-2. Componentes de la Aceleración
+**2. Componentes de la Aceleración**
 
 Usando la segunda ley de Newton:
 
@@ -70,7 +70,7 @@ const ay = q_m * (Ey - particle.vx * Bz);
 donde q_m = particle.q / particle.m.
 ```
 
-3. Campo Eléctrico Radial (Ley de Coulomb)
+**3. Campo Eléctrico Radial (Ley de Coulomb)**
 
 En el caso de una carga puntual 
 𝑄
@@ -97,7 +97,7 @@ const r_cubed = Math.pow(r_sq, 1.5);
 const Ex = config.kQ * x / r_cubed;
 const Ey = config.kQ * y / r_cubed;
 ```
-4. Ecuaciones del Movimiento
+**4. Ecuaciones del Movimiento**
 
 Las ecuaciones diferenciales utilizadas son:
 
@@ -111,7 +111,7 @@ $$
 
 Como la solución analítica no siempre es posible (excepto en casos particulares), se usa un método numérico.
 
-5. Integración Numérica — Método Euler–Cromer
+**5. Integración Numérica — Método Euler–Cromer**
 
 El simulador emplea Euler–Cromer, una variante del método de Euler con mejor estabilidad energética.
 Esto es crucial para modelar órbitas cerradas o movimientos circulares.
@@ -136,7 +136,7 @@ particle.y += particle.vy * dt;
 
 El programa ejecuta 10 subpasos por frame para mayor precisión.
 
-6. Estela de la Partícula
+**6. Estela de la Partícula**
 
 Cada posición es almacenada:
 
@@ -146,7 +146,7 @@ history.push({ x: particle.x, y: particle.y });
 
 Esto permite visualizar la trayectoria completa.
 
-7. Representación del Campo
+**7. Representación del Campo**
 
 El simulador también dibuja visualmente los campos:
 
@@ -160,7 +160,7 @@ Esta parte del programa refuerza la interpretación visual de la física involuc
 
 ## 🎮 Funcionalidades Principales
 
-## Panel Interactivo
+**Panel Interactivo**
 
 Modificación de:
 
@@ -172,7 +172,7 @@ Parámetros del campo
 
 Zoom y longitud de estela
 
-## Tipos de Campo Disponibles
+**Tipos de Campo Disponibles**
 
 🟡 Campo Eléctrico Uniforme (trayectorias parabólicas)
 
@@ -188,7 +188,7 @@ Incluyendo configuraciones listas:
 
 “Órbita elíptica”
 
-🎯 Finalidad del Proyecto
+## 🎯 Finalidad del Proyecto
 
 El propósito de este proyecto es proporcionar una herramienta interactiva que permita a los estudiantes de Electromagnetismo comprender de manera visual y computacional el comportamiento dinámico de partículas cargadas sometidas a distintos tipos de campos eléctricos.
 
@@ -208,11 +208,11 @@ En conjunto, este proyecto actúa como un puente entre la teoría electromagnét
 
 ## 🚀 Cómo Ejecutarlo
 
-## ✔️ Opción 1
+**✔️ Opción 1**
 Ingresar directamente al link para pobrar el simulador
 [Ir a la simulación](https://paolovm27.github.io/DINAMICA-DE-PARTICULAS-CARGADAS-EN-CAMPOS-ELECTRICOS)
 
-## ✔️ Opción 2
+**✔️ Opción 2**
 Clonar o descargar el repositorio.
 
 Mantener juntos los archivos:
@@ -227,7 +227,7 @@ Abrir index.html en un navegador.
 
 Ajustar parámetros y comenzar a simular.
 
-📄 Licencia
+## 📄 Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT.  
 
