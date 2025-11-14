@@ -156,7 +156,8 @@ Campo radial: líneas de campo divergentes o convergentes
 Esta parte del programa refuerza la interpretación visual de la física involucrada.
 
 ## 🎮 Funcionalidades Principales
-## 1. Panel Interactivo
+
+## Panel Interactivo
 
 Modificación de:
 
@@ -176,9 +177,7 @@ Zoom y longitud de estela
 
 🔴 Campo Eléctrico Radial (órbitas y repulsiones)
 
-## Ejemplos Predeterminados
-
-Incluye configuraciones listas:
+Incluyendo configuraciones listas:
 
 “Tiro parabólico”
 
@@ -194,7 +193,7 @@ Incluye configuraciones listas:
 ✔ Ideal para cursos de física, electrónica, computación científica, simulación o proyectos universitarios.
 ✔ Completamente ejecutable desde un navegador.
 
-🚀 Cómo Ejecutarlo
+## 🚀 Cómo Ejecutarlo
 
 ## ✔️ Opción 1
 Ingresar directamente al link para pobrar el simulador
