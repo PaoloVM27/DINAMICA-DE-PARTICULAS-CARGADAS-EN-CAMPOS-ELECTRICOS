@@ -160,7 +160,7 @@ Esta parte del programa refuerza la interpretación visual de la física involuc
 
 ## 🎮 Funcionalidades Principales
 
-**Panel Interactivo:** Permite modificar los siguientes parámetros:
+**Panel Interactivo:** Permite modificar los siguientes parámetros
 
 - Carga y masa
 
