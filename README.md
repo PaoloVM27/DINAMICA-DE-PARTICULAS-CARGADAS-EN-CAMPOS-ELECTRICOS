@@ -62,9 +62,10 @@ a_y = \frac{q}{m}(E_y - v_x B_z)
 $$
 
 📌 Implementación directa en el código:
+```javascript
 const ax = q_m * (Ex + particle.vy * Bz);
 const ay = q_m * (Ey - particle.vx * Bz);
-
+```
 
 donde q_m = particle.q / particle.m.
 
@@ -89,11 +90,12 @@ Trayectorias de escape
 Movimientos de repulsión
 
 📌 Implementación:
+```javascript
 const r_sq = x*x + y*y + EPSILON;
 const r_cubed = Math.pow(r_sq, 1.5);
 const Ex = config.kQ * x / r_cubed;
 const Ey = config.kQ * y / r_cubed;
-
+```
 4. Ecuaciones del Movimiento
 
 Las ecuaciones diferenciales utilizadas son:
@@ -124,11 +126,12 @@ x(t+\Delta t) = x(t) + v(t+\Delta t)\Delta t
 $$
 
 📌 Código:
+```javascript
 particle.vx += ax * dt;
 particle.vy += ay * dt;
 particle.x += particle.vx * dt;
 particle.y += particle.vy * dt;
-
+```
 
 El programa ejecuta 10 subpasos por frame para mayor precisión.
 
