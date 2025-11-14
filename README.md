@@ -1,6 +1,6 @@
 # DINÁMICA DE PARTÍCULAS CARGADAS EN CAMPOS ELÉCTRICOS
 
-📌 Descripción General
+## 📌 Descripción General
 
 Este proyecto es un simulador interactivo en 2D que permite estudiar el comportamiento dinámico de una partícula cargada bajo campos eléctricos y magnéticos.
 Está diseñado para apoyar el aprendizaje desde dos enfoques complementarios:
@@ -15,7 +15,7 @@ El simulador implementa una integración numérica estable basada en la fuerza d
 
 El usuario puede seleccionar tipos de campo, modificar parámetros, cargar ejemplos predefinidos y observar la trayectoria en tiempo real.
 
-📘 Marco Teórico y Fundamento Físico
+## 📘 Marco Teórico y Fundamento Físico
 
 Este simulador está basado en las ecuaciones fundamentales del electromagnetismo clásico y la dinámica newtoniana. Las fórmulas implementadas en el código representan directamente la física del movimiento de una partícula cargada.
 
@@ -155,8 +155,8 @@ Campo radial: líneas de campo divergentes o convergentes
 
 Esta parte del programa refuerza la interpretación visual de la física involucrada.
 
-🎮 Funcionalidades Principales
-1. Panel Interactivo
+## 🎮 Funcionalidades Principales
+## 1. Panel Interactivo
 
 Modificación de:
 
@@ -168,7 +168,7 @@ Parámetros del campo
 
 Zoom y longitud de estela
 
-2. Tipos de Campo Disponibles
+## Tipos de Campo Disponibles
 
 🟡 Campo Eléctrico Uniforme (trayectorias parabólicas)
 
@@ -176,7 +176,7 @@ Zoom y longitud de estela
 
 🔴 Campo Eléctrico Radial (órbitas y repulsiones)
 
-3. Ejemplos Predeterminados
+## Ejemplos Predeterminados
 
 Incluye configuraciones listas:
 
@@ -186,17 +186,7 @@ Incluye configuraciones listas:
 
 “Órbita elíptica”
 
-4. Visualización Clara
-
-Cuadrícula
-
-Estela
-
-Colores según carga
-
-Campo representado gráficamente
-
-💡 Beneficios del Simulador
+## 💡 Beneficios del Simulador
 
 ✔ Permite estudiar soluciones analíticas y compararlas con resultados numéricos.
 ✔ Introduce el uso de métodos computacionales para resolver ecuaciones diferenciales reales.
