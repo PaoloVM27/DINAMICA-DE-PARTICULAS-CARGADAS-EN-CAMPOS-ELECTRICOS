@@ -28,22 +28,21 @@ $$
 $$
 
 donde:
-
-𝑞: carga de la partícula
+$$
+q : carga de la partícula
+$$
 
 $$
 \vec{E} : campo eléctrico
 $$
 
 $$
-\vec{v}
+\vec{v}: velocidad
 $$
-: velocidad
 
 $$
-\vec{B}
+\vec{B}: campo magnético
 $$
-: campo magnético
 
 Esta es la ecuación central modelada en el simulador.
 
