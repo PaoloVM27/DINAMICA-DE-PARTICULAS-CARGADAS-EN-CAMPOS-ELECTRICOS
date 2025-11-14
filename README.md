@@ -66,8 +66,9 @@ $$
 const ax = q_m * (Ex + particle.vy * Bz);
 const ay = q_m * (Ey - particle.vx * Bz);
 ```
-
+```javascript
 donde q_m = particle.q / particle.m.
+```
 
 3. Campo Eléctrico Radial (Ley de Coulomb)
 
@@ -139,7 +140,9 @@ El programa ejecuta 10 subpasos por frame para mayor precisión.
 
 Cada posición es almacenada:
 
+```javascript
 history.push({ x: particle.x, y: particle.y });
+```
 
 Esto permite visualizar la trayectoria completa.
 
