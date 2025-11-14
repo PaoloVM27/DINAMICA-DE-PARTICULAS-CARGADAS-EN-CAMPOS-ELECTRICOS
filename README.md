@@ -188,13 +188,23 @@ Incluyendo configuraciones listas:
 
 “Órbita elíptica”
 
-## 💡 Beneficios del Simulador
+🎯 Finalidad del Proyecto
 
-✔ Permite estudiar soluciones analíticas y compararlas con resultados numéricos.
-✔ Introduce el uso de métodos computacionales para resolver ecuaciones diferenciales reales.
-✔ Facilita la comprensión de fenómenos complejos como órbitas y campos radiales.
-✔ Ideal para cursos de física, electrónica, computación científica, simulación o proyectos universitarios.
-✔ Completamente ejecutable desde un navegador.
+El propósito de este proyecto es proporcionar una herramienta interactiva que permita a los estudiantes de Electromagnetismo comprender de manera visual y computacional el comportamiento dinámico de partículas cargadas sometidas a distintos tipos de campos eléctricos.
+
+Mediante una simulación 3D desarrollada en JavaScript y Three.js, este programa facilita la interpretación de conceptos fundamentales como fuerza eléctrica, trayectoria de partículas, superposición de campos y la aplicación directa de la segunda ley de Newton en sistemas con cargas.
+
+Para los estudiantes de Ciencias de la Computación, este proyecto aporta una conexión clara entre teoría física y modelado computacional, permitiendo:
+
+Visualizar ecuaciones electromagnéticas mediante animaciones interactivas.
+
+Comprender cómo se implementan modelos físicos dentro de un motor gráfico 3D.
+
+Explorar la relación entre programación, simulación numérica y fenómenos físicos.
+
+Analizar cómo pequeñas variaciones en parámetros (carga, masa, magnitud del campo, posición inicial) afectan las trayectorias de las partículas.
+
+En conjunto, este proyecto actúa como un puente entre la teoría electromagnética y las habilidades de programación, ayudando a consolidar el aprendizaje mediante la experimentación directa y la visualización científica.
 
 ## 🚀 Cómo Ejecutarlo
 
