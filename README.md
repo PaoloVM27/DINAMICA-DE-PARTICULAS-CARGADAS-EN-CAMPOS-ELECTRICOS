@@ -218,7 +218,9 @@ Clonar o descargar el repositorio.
 Mantener juntos los archivos:
 
 index.html
+
 scripts.js
+
 styles.css
 
 Abrir index.html en un navegador.
