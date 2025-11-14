@@ -48,110 +48,19 @@ Esta es la ecuación central modelada en el simulador.
 
 Usando la segunda ley de Newton:
 
-𝑎
-⃗
-=
-𝐹
-⃗
-𝑚
-a
-=
-m
-F
-	​
-
-
+$$
+\vec{F} = m \vec{a}
+$$
+​
 En 2D, tomando 
-𝐵
-⃗
-=
-(
-0
-,
-0
-,
-𝐵
-𝑧
-)
-B
-=(0,0,B
-z
-	​
+$$
+a_x = \frac{q}{m}(E_x + v_y B_z)
+$$
 
-):
+$$
+a_y = \frac{q}{m}(E_y - v_x B_z)
+$$
 
-𝑎
-𝑥
-=
-𝑞
-𝑚
-(
-𝐸
-𝑥
-+
-𝑣
-𝑦
-𝐵
-𝑧
-)
-a
-x
-	​
-
-=
-m
-q
-	​
-
-(E
-x
-	​
-
-+v
-y
-	​
-
-B
-z
-	​
-
-)
-𝑎
-𝑦
-=
-𝑞
-𝑚
-(
-𝐸
-𝑦
-−
-𝑣
-𝑥
-𝐵
-𝑧
-)
-a
-y
-	​
-
-=
-m
-q
-	​
-
-(E
-y
-	​
-
-−v
-x
-	​
-
-B
-z
-	​
-
-)
 📌 Implementación directa en el código:
 const ax = q_m * (Ex + particle.vy * Bz);
 const ay = q_m * (Ey - particle.vx * Bz);
@@ -165,43 +74,9 @@ En el caso de una carga puntual
 𝑄
 Q ubicada en el origen:
 
-𝐸
-⃗
-(
-𝑥
-,
-𝑦
-)
-=
-𝑘
-𝑄
-(
-𝑥
-2
-+
-𝑦
-2
-)
-3
-/
-2
-(
-𝑥
-,
-𝑦
-)
-E
-(x,y)=k
-(x
-2
-+y
-2
-)
-3/2
-Q
-	​
-
-(x,y)
+$$
+\vec{E}(x,y) = k\frac{Q}{(x^2 + y^2)^{3/2}}(x, y)
+$$
 
 Esto permite simular:
 
@@ -223,38 +98,13 @@ const Ey = config.kQ * y / r_cubed;
 
 Las ecuaciones diferenciales utilizadas son:
 
-𝑑
-𝑣
-⃗
-𝑑
-𝑡
-=
-𝑎
-⃗
-,
-𝑑
-𝑟
-⃗
-𝑑
-𝑡
-=
-𝑣
-⃗
-dt
-d
-v
-	​
+$$
+\frac{d\vec{v}}{dt} = \vec{a}
+$$
 
-=
-a
-,
-dt
-d
-r
-	​
-
-=
-v
+$$
+\frac{d\vec{r}}{dt} = \vec{v}
+$$
 
 Como la solución analítica no siempre es posible (excepto en casos particulares), se usa un método numérico.
 
@@ -265,49 +115,14 @@ Esto es crucial para modelar órbitas cerradas o movimientos circulares.
 
 Actualización:
 
-𝑣
-(
-𝑡
-+
-Δ
-𝑡
-)
-=
-𝑣
-(
-𝑡
-)
-+
-𝑎
-(
-𝑡
-)
-Δ
-𝑡
-v(t+Δt)=v(t)+a(t)Δt
-𝑥
-(
-𝑡
-+
-Δ
-𝑡
-)
-=
-𝑥
-(
-𝑡
-)
-+
-𝑣
-(
-𝑡
-+
-Δ
-𝑡
-)
-Δ
-𝑡
-x(t+Δt)=x(t)+v(t+Δt)Δt
+$$
+v(t+\Delta t) = v(t) + a(t)\Delta t
+$$
+
+$$
+x(t+\Delta t) = x(t) + v(t+\Delta t)\Delta t
+$$
+
 📌 Código:
 particle.vx += ax * dt;
 particle.vy += ay * dt;
@@ -322,7 +137,6 @@ El programa ejecuta 10 subpasos por frame para mayor precisión.
 Cada posición es almacenada:
 
 history.push({ x: particle.x, y: particle.y });
-
 
 Esto permite visualizar la trayectoria completa.
 
@@ -389,6 +203,11 @@ Campo representado gráficamente
 
 🚀 Cómo Ejecutarlo
 
+## ✔️ Opción 1
+Ingresar directamente al link para pobrar el simulador
+[Ir a la simulación](https://paolovm27.github.io/DINAMICA-DE-PARTICULAS-CARGADAS-EN-CAMPOS-ELECTRICOS)
+
+## ✔️ Opción 2
 Clonar o descargar el repositorio.
 
 Mantener juntos los archivos:
