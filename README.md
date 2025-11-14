@@ -28,7 +28,7 @@ $$
 $$
 
 donde:
-<p align="center">q : carga de la partículaí</p>
+<p align="center"><b><i>q : carga de la partícula</i></b></p>
 
 $$
 \vec{E} : campo eléctrico
