@@ -219,4 +219,9 @@ Ajustar parámetros y comenzar a simular.
 
 📄 Licencia
 
-(Agrega aquí tu licencia preferida: MIT, GPL, CC-BY, etc.)
+Este proyecto está licenciado bajo la Licencia MIT.  
+
+Copyright (c) 2025 Paolo Villavicencio Merella  
+
+El texto completo de la licencia se encuentra en el archivo [LICENSE](https://github.com/PaoloVM27/DINAMICA-DE-PARTICULAS-CARGADAS-EN-CAMPOS-ELECTRICOS/blob/main/LICENSE) de este repositorio.
+
