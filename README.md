@@ -160,19 +160,17 @@ Esta parte del programa refuerza la interpretación visual de la física involuc
 
 ## 🎮 Funcionalidades Principales
 
-<span style="font-size: 20px; font-weight: bold;">Panel Interactivo</span>
+**Panel Interactivo:** Permite modificar los siguientes parámetros:
 
-Modificación de:
+- Carga y masa
 
-Carga y masa
+- Posición y velocidades iniciales
 
-Posición y velocidades iniciales
+- Parámetros del campo
 
-Parámetros del campo
+- Zoom y longitud de estela
 
-Zoom y longitud de estela
-
-<span style="font-size: 20px; font-weight: bold;">Tipos de Campo Disponibles</span>
+**Tipos de Campo Disponibles:**
 
 🟡 Campo Eléctrico Uniforme (trayectorias parabólicas)
 
@@ -182,11 +180,11 @@ Zoom y longitud de estela
 
 Incluyendo configuraciones listas:
 
-“Tiro parabólico”
+- “Tiro parabólico”
 
-“Círculo perfecto”
+- “Círculo perfecto”
 
-“Órbita elíptica”
+- “Órbita elíptica”
 
 ## 🎯 Finalidad del Proyecto
 
@@ -208,12 +206,12 @@ En conjunto, este proyecto actúa como un puente entre la teoría electromagnét
 
 ## 🚀 Cómo Ejecutarlo
 
-<span style="font-size: 20px; font-weight: bold;">✔️ Opción 1</span>
+**✔️ Opción 1**
 
 Ingresar directamente al link para pobrar el simulador
 [Ir a la simulación](https://paolovm27.github.io/DINAMICA-DE-PARTICULAS-CARGADAS-EN-CAMPOS-ELECTRICOS)
 
-<span style="font-size: 20px; font-weight: bold;">✔️ Opción 2</span>
+**✔️ Opción 2**
 
 Clonar o descargar el repositorio.
 
