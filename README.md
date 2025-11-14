@@ -1,18 +1,4 @@
 # DINÁMICA DE PARTÍCULAS CARGADAS EN CAMPOS ELÉCTRICOS
-Proyecto web interactivo para visualizar, analizar y resolver el movimiento de partículas cargadas
-Archivos principales:
-
-index.html 
-
-index
-
-scripts.js 
-
-scripts
-
-styles.css 
-
-styles
 
 📌 Descripción General
 
@@ -44,18 +30,19 @@ $$
 donde:
 
 𝑞: carga de la partícula
+
 $$
-(\vec{E}
+\vec{E}
 $$
 : campo eléctrico
 
 $$
-(\vec{v}
+\vec{v}
 $$
 : velocidad
 
 $$
-(\vec{B}
+\vec{B}
 $$
 : campo magnético
 
