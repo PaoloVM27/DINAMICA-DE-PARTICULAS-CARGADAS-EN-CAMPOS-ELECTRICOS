@@ -160,7 +160,7 @@ Esta parte del programa refuerza la interpretación visual de la física involuc
 
 ## 🎮 Funcionalidades Principales
 
-**Panel Interactivo**
+<span style="font-size: 20px; font-weight: bold;">Panel Interactivo</span>
 
 Modificación de:
 
@@ -172,7 +172,7 @@ Parámetros del campo
 
 Zoom y longitud de estela
 
-**Tipos de Campo Disponibles**
+<span style="font-size: 20px; font-weight: bold;">Tipos de Campo Disponibles</span>
 
 🟡 Campo Eléctrico Uniforme (trayectorias parabólicas)
 
@@ -208,19 +208,19 @@ En conjunto, este proyecto actúa como un puente entre la teoría electromagnét
 
 ## 🚀 Cómo Ejecutarlo
 
-**✔️ Opción 1**
+<span style="font-size: 20px; font-weight: bold;">✔️ Opción 1</span>
+
 Ingresar directamente al link para pobrar el simulador
 [Ir a la simulación](https://paolovm27.github.io/DINAMICA-DE-PARTICULAS-CARGADAS-EN-CAMPOS-ELECTRICOS)
 
-**✔️ Opción 2**
+<span style="font-size: 20px; font-weight: bold;">✔️ Opción 2</span>
+
 Clonar o descargar el repositorio.
 
 Mantener juntos los archivos:
 
 index.html
-
 scripts.js
-
 styles.css
 
 Abrir index.html en un navegador.
