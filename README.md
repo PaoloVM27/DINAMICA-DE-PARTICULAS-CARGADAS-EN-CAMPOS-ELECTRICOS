@@ -190,13 +190,13 @@ Incluyendo configuraciones listas:
 
 El propósito de este proyecto es proporcionar una herramienta interactiva que permita a los estudiantes de Electromagnetismo comprender de manera visual y computacional el comportamiento dinámico de partículas cargadas sometidas a distintos tipos de campos eléctricos.
 
-Mediante una simulación 3D desarrollada en JavaScript y Three.js, este programa facilita la interpretación de conceptos fundamentales como fuerza eléctrica, trayectoria de partículas, superposición de campos y la aplicación directa de la segunda ley de Newton en sistemas con cargas.
+Mediante una simulación 2D desarrollada en JavaScript y Three.js, este programa facilita la interpretación de conceptos fundamentales como fuerza eléctrica, trayectoria de partículas, superposición de campos y la aplicación directa de la segunda ley de Newton en sistemas con cargas.
 
 Para los estudiantes de Ciencias de la Computación, este proyecto aporta una conexión clara entre teoría física y modelado computacional, permitiendo:
 
 Visualizar ecuaciones electromagnéticas mediante animaciones interactivas.
 
-Comprender cómo se implementan modelos físicos dentro de un motor gráfico 3D.
+Comprender cómo se implementan modelos físicos dentro de un motor gráfico 2D.
 
 Explorar la relación entre programación, simulación numérica y fenómenos físicos.
 
