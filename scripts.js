@@ -1,4 +1,3 @@
-// === VARIABLES GLOBALES ===
 let canvas, ctx;
 let particle;
 let fieldConfig;
@@ -63,11 +62,16 @@ document.addEventListener('DOMContentLoaded', () => {
     fieldTypeSelect.addEventListener('change', updateFieldOptions);
     presetSelect.addEventListener('change', applyPreset);
     
-    // Eventos de Mouse (Arrastrar el canvas)
+    // === EVENTOS DE MOUSE (PC) ===
     canvas.addEventListener('mousedown', onMouseDown);
     canvas.addEventListener('mousemove', onMouseMove);
     canvas.addEventListener('mouseup', onMouseUp);
     canvas.addEventListener('mouseleave', onMouseUp); 
+
+    // === EVENTOS TÁCTILES (MÓVIL/TABLET) ===
+    canvas.addEventListener('touchstart', onTouchStart, { passive: false });
+    canvas.addEventListener('touchmove', onTouchMove, { passive: false });
+    canvas.addEventListener('touchend', onMouseUp);
 
     window.addEventListener('resize', resizeCanvas);
     
@@ -83,8 +87,9 @@ function resizeCanvas() {
     draw(); 
 }
 
-// === LÓGICA DE CÁMARA (PANNING) ===
+// === LÓGICA DE CÁMARA ===
 
+// Ratón
 function onMouseDown(e) {
     isDragging = true;
     dragStartX = e.clientX;
@@ -93,19 +98,35 @@ function onMouseDown(e) {
 
 function onMouseMove(e) {
     if (!isDragging) return;
-
     const dx = e.clientX - dragStartX;
     const dy = e.clientY - dragStartY;
-
     panX += dx;
     panY += dy;
-
     dragStartX = e.clientX;
     dragStartY = e.clientY;
+    if (!animationId) draw();
+}
 
-    if (!animationId) {
-        draw(); 
+// Táctil (Touch)
+function onTouchStart(e) {
+    if (e.touches.length === 1) {
+        e.preventDefault();
+        isDragging = true;
+        dragStartX = e.touches[0].clientX;
+        dragStartY = e.touches[0].clientY;
     }
+}
+
+function onTouchMove(e) {
+    if (!isDragging || e.touches.length !== 1) return;
+    e.preventDefault();
+    const dx = e.touches[0].clientX - dragStartX;
+    const dy = e.touches[0].clientY - dragStartY;
+    panX += dx;
+    panY += dy;
+    dragStartX = e.touches[0].clientX;
+    dragStartY = e.touches[0].clientY;
+    if (!animationId) draw();
 }
 
 function onMouseUp() {
@@ -350,6 +371,12 @@ function draw() {
     let legendX = 20;
     let legendY = 30;
 
+    // Ajuste responsivo para la leyenda
+    if (canvas.width < 400) {
+        legendX = 10;
+        legendY = 20;
+    }
+
     ctx.fillStyle = '#4ADE80'; ctx.strokeStyle = '#4ADE80'; ctx.lineWidth = 2;
     drawSimpleHorizontalArrow(legendX, legendY);
     ctx.fillText("Velocidad", legendX + 35, legendY + 1);
@@ -359,11 +386,18 @@ function draw() {
     drawSimpleHorizontalArrow(legendX, legendY);
     ctx.fillText("Aceleración/Fuerza", legendX + 35, legendY + 1);
 
-    // 2. PANEL DE DATOS
+    // PANEL DE DATOS
     ctx.textAlign = 'right';
     ctx.textBaseline = 'top';
     let dataY = 20;
-    const dataX = canvas.width - 20;
+    let dataX = canvas.width - 20;
+    
+    // Ajuste para móvil
+    if (canvas.width < 400) {
+        dataX = canvas.width - 10;
+        dataY = 15;
+        ctx.font = 'bold 12px monospace';
+    }
 
     const vSq = particle.vx * particle.vx + particle.vy * particle.vy;
     const vMag = Math.sqrt(vSq);
@@ -575,7 +609,7 @@ function drawTrail(lineWidth) {
 function drawParticle(lineWidth) {
     const particleRadius = 4 * lineWidth; 
     
-    // 1. Dibujar el cuerpo de la partícula
+    // Dibujar el cuerpo de la partícula
     ctx.fillStyle = (particle.q > 0) ? '#FF4136' : '#0074D9';
     ctx.strokeStyle = 'white';
     ctx.lineWidth = lineWidth;
@@ -589,14 +623,12 @@ function drawParticle(lineWidth) {
     ctx.strokeStyle = '#4ADE80'; 
     ctx.fillStyle = '#4ADE80';
     ctx.lineWidth = lineWidth * 1.5;
-    // Factor de escala reducido a 0.15 para que sea más discreto
     drawVectorArrow(particle.x, particle.y, particle.vx, particle.vy, 0.15);
 
     // Dibujar Vector Aceleración (ROSA)
     ctx.strokeStyle = '#F472B6'; 
     ctx.fillStyle = '#F472B6';
     ctx.lineWidth = lineWidth * 1.5;
-    // Factor de escala reducido a 0.25 para que no sea gigante
     drawVectorArrow(particle.x, particle.y, particle.ax, particle.ay, 0.25);
 }
 
@@ -607,7 +639,7 @@ function drawVectorArrow(x, y, vx, vy, scaleFactor) {
     const len = Math.sqrt(vx*vx + vy*vy);
     if (len < 0.1) return; 
 
-    const maxLen = 2.5;
+    const maxLen = 2.5; 
     let arrowLen = len * scaleFactor;
     
     if (arrowLen > maxLen) {
@@ -651,4 +683,3 @@ function drawSimpleHorizontalArrow(x, y) {
     ctx.closePath();
     ctx.fill();
 }
-
