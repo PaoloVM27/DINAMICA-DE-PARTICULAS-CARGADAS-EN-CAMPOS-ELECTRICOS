@@ -7,7 +7,7 @@ let animationId = null;
 let lastTime = 0;
 let simulationTime = 0; 
 
-// Variables de la Cámara (Panning/Arrastre)
+// Variables de la Cámara (Arrastre)
 let panX = 0;
 let panY = 0;
 let isDragging = false;
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fieldTypeSelect.addEventListener('change', updateFieldOptions);
     presetSelect.addEventListener('change', applyPreset);
     
-    // Eventos de Mouse para Panning (Arrastrar el canvas)
+    // Eventos de Mouse (Arrastrar el canvas)
     canvas.addEventListener('mousedown', onMouseDown);
     canvas.addEventListener('mousemove', onMouseMove);
     canvas.addEventListener('mouseup', onMouseUp);
@@ -344,7 +344,7 @@ function draw() {
     ctx.font = 'bold 14px monospace';
     const lineHeight = 20;
 
-    // 1. LEYENDA (Izquierda)
+    // 1. LEYENDA
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
     let legendX = 20;
@@ -359,7 +359,7 @@ function draw() {
     drawSimpleHorizontalArrow(legendX, legendY);
     ctx.fillText("Aceleración/Fuerza", legendX + 35, legendY + 1);
 
-    // 2. PANEL DE DATOS (Derecha)
+    // 2. PANEL DE DATOS
     ctx.textAlign = 'right';
     ctx.textBaseline = 'top';
     let dataY = 20;
@@ -585,14 +585,14 @@ function drawParticle(lineWidth) {
     ctx.fill();
     ctx.stroke();
 
-    // 2. Dibujar Vector Velocidad (VERDE)
+    // Dibujar Vector Velocidad (VERDE)
     ctx.strokeStyle = '#4ADE80'; 
     ctx.fillStyle = '#4ADE80';
     ctx.lineWidth = lineWidth * 1.5;
     // Factor de escala reducido a 0.15 para que sea más discreto
     drawVectorArrow(particle.x, particle.y, particle.vx, particle.vy, 0.15);
 
-    // 3. Dibujar Vector Aceleración (ROSA)
+    // Dibujar Vector Aceleración (ROSA)
     ctx.strokeStyle = '#F472B6'; 
     ctx.fillStyle = '#F472B6';
     ctx.lineWidth = lineWidth * 1.5;
@@ -607,14 +607,12 @@ function drawVectorArrow(x, y, vx, vy, scaleFactor) {
     const len = Math.sqrt(vx*vx + vy*vy);
     if (len < 0.1) return; 
 
-    // --- CORRECCIÓN: Límite en UNIDADES DE CUADRÍCULA ---
-    const maxLen = 2.5; // Máximo 2.5 cuadros de largo
+    const maxLen = 2.5;
     let arrowLen = len * scaleFactor;
     
     if (arrowLen > maxLen) {
         arrowLen = maxLen;
     }
-    // ----------------------------------
     
     const nx = vx / len;
     const ny = vy / len;
@@ -653,3 +651,4 @@ function drawSimpleHorizontalArrow(x, y) {
     ctx.closePath();
     ctx.fill();
 }
+
