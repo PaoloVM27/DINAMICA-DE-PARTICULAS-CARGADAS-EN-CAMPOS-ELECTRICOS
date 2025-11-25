@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Simulador de Partículas Cargadas</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,29 +13,29 @@
     
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-900 text-gray-200">
+<body class="bg-gray-900 text-gray-200 overflow-hidden fixed w-full h-full">
 
-    <div class="flex flex-col md:flex-row min-h-screen">
+    <div class="flex flex-col md:flex-row w-full h-full">
         
-        <div class="w-full md:w-1/3 lg:w-1/4 p-4 bg-gray-800 shadow-lg overflow-y-auto" style="max-height: 100vh;">
-            <h1 class="text-2xl font-bold text-white mb-6">Simulador de Partículas</h1>
+        <div class="w-full md:w-1/3 lg:w-1/4 bg-gray-800 shadow-lg overflow-y-auto h-[45vh] md:h-full p-4 z-10 border-b md:border-b-0 md:border-r border-gray-700">
+            <h1 class="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Simulador de Partículas</h1>
 
             <div class="mb-6">
-                <h2 class="text-lg font-semibold text-blue-400 mb-3">Controles</h2>
+                <h2 class="text-base md:text-lg font-semibold text-blue-400 mb-2">Controles</h2>
                 <div class="grid grid-cols-3 gap-2 mb-3">
                     <button id="start-sim" class="btn btn-primary">Iniciar</button>
                     <button id="stop-sim" class="btn btn-secondary">Pausar</button>
                     <button id="reset-sim" class="btn btn-danger">Reiniciar</button>
                 </div>
                 <div>
-                    <label for="auto-pause-time">Pausar en t (segundos) <span class="text-xs text-gray-500">(Opcional)</span></label>
+                    <label for="auto-pause-time">Pausar en t (segundos)</label>
                     <input type="number" id="auto-pause-time" placeholder="Ej: 3.0" step="0.1" min="0">
                 </div>
             </div>
 
             <div class="mb-6">
-                <h2 class="text-lg font-semibold text-blue-400 mb-3">Parámetros de la Partícula</h2>
-                <div class="grid grid-cols-2 gap-4">
+                <h2 class="text-base md:text-lg font-semibold text-blue-400 mb-2">Parámetros Partícula</h2>
+                <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label for="charge">Carga (q)</label>
                         <input type="number" id="charge" value="1" step="0.1">
@@ -64,65 +64,65 @@
             </div>
 
             <div class="mb-6">
-                <h2 class="text-lg font-semibold text-blue-400 mb-3">Configuración del Campo</h2>
+                <h2 class="text-base md:text-lg font-semibold text-blue-400 mb-2">Configuración Campo</h2>
                 <div>
                     <label for="field-type">Tipo de Campo</label>
                     <select id="field-type">
-                        <option value="uniform-e">1. Campo Eléctrico Uniforme (Parábola)</option>
-                        <option value="uniform-b">2. Campo Magnético Uniforme (Círculo)</option>
-                        <option value="radial-e">3. Campo Eléctrico Radial (Órbita)</option>
+                        <option value="uniform-e">1. Eléctrico Uniforme</option>
+                        <option value="uniform-b">2. Magnético Uniforme</option>
+                        <option value="radial-e">3. Eléctrico Radial</option>
                     </select>
                 </div>
 
                 <div class="mt-4">
-                    <label for="preset-examples">Ejemplos Predeterminados</label>
+                    <label for="preset-examples">Ejemplos</label>
                     <select id="preset-examples"></select>
                 </div>
 
                 <div id="uniform-e-inputs" class="mt-4">
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-2 gap-3">
                         <div>
-                            <label for="field-ex">Intensidad Campo Eₓ</label>
+                            <label for="field-ex">Campo Eₓ</label>
                             <input type="number" id="field-ex" value="0.5" step="0.1">
                         </div>
                         <div>
-                            <label for="field-ey">Intensidad Campo Eᵧ</label>
+                            <label for="field-ey">Campo Eᵧ</label>
                             <input type="number" id="field-ey" value="0" step="0.1">
                         </div>
                     </div>
                 </div>
 
                 <div id="uniform-b-inputs" class="mt-4 hidden">
-                    <label for="field-bz">Intensidad Campo Bₛ (fuera del plano)</label>
+                    <label for="field-bz">Campo Bₛ (fuera del plano)</label>
                     <input type="number" id="field-bz" value="1" step="0.1">
                 </div>
 
                 <div id="radial-e-inputs" class="mt-4 hidden">
-                    <label for="field-kq">Carga Central (k * Q)</label>
+                    <label for="field-kq">Carga Central (k*Q)</label>
                     <input type="number" id="field-kq" value="-100" step="10">
                 </div>
             </div>
 
-            <div>
-                <h2 class="text-lg font-semibold text-blue-400 mb-3">Visualización</h2>
-                <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="mb-10 md:mb-0">
+                <h2 class="text-base md:text-lg font-semibold text-blue-400 mb-2">Visualización</h2>
+                <div class="grid grid-cols-2 gap-3 mb-4">
                     <div>
-                        <label for="trail-length">Longitud de Estela</label>
+                        <label for="trail-length">Estela</label>
                         <input type="number" id="trail-length" value="1000" step="100" min="10">
                     </div>
                     <div>
-                        <label for="zoom">Zoom (Px/u)</label>
+                        <label for="zoom">Zoom</label>
                         <input type="number" id="zoom" value="40" step="5" min="5">
                     </div>
                 </div>
-                <button id="reset-camera" class="btn btn-secondary text-xs py-1">
+                <button id="reset-camera" class="btn btn-secondary text-xs py-2">
                     📍 Recentrar Cámara (0,0)
                 </button>
             </div>
         </div>
 
-        <div class="flex-grow" style="height: 100vh;">
-            <canvas id="simulationCanvas"></canvas>
+        <div class="flex-grow relative h-[55vh] md:h-full bg-black">
+            <canvas id="simulationCanvas" class="w-full h-full block touch-none"></canvas>
         </div>
 
     </div>
