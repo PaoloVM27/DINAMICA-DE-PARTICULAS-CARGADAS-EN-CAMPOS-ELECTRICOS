@@ -22,10 +22,14 @@
 
             <div class="mb-6">
                 <h2 class="text-lg font-semibold text-blue-400 mb-3">Controles</h2>
-                <div class="grid grid-cols-3 gap-2">
+                <div class="grid grid-cols-3 gap-2 mb-3">
                     <button id="start-sim" class="btn btn-primary">Iniciar</button>
                     <button id="stop-sim" class="btn btn-secondary">Pausar</button>
                     <button id="reset-sim" class="btn btn-danger">Reiniciar</button>
+                </div>
+                <div>
+                    <label for="auto-pause-time">Pausar en t (segundos) <span class="text-xs text-gray-500">(Opcional)</span></label>
+                    <input type="number" id="auto-pause-time" placeholder="Ej: 3.0" step="0.1" min="0">
                 </div>
             </div>
 
@@ -72,8 +76,7 @@
 
                 <div class="mt-4">
                     <label for="preset-examples">Ejemplos Predeterminados</label>
-                    <select id="preset-examples">
-                        </select>
+                    <select id="preset-examples"></select>
                 </div>
 
                 <div id="uniform-e-inputs" class="mt-4">
@@ -102,16 +105,19 @@
 
             <div>
                 <h2 class="text-lg font-semibold text-blue-400 mb-3">Visualización</h2>
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-2 gap-4 mb-4">
                     <div>
-                        <label for="trail-length">Longitud de Estela (puntos)</label>
+                        <label for="trail-length">Longitud de Estela</label>
                         <input type="number" id="trail-length" value="1000" step="100" min="10">
                     </div>
-                    <div >
-                        <label for="zoom">Zoom (Píxeles / unidad)</label>
+                    <div>
+                        <label for="zoom">Zoom (Px/u)</label>
                         <input type="number" id="zoom" value="40" step="5" min="5">
                     </div>
                 </div>
+                <button id="reset-camera" class="btn btn-secondary text-xs py-1">
+                    📍 Recentrar Cámara (0,0)
+                </button>
             </div>
         </div>
 
