@@ -308,6 +308,17 @@ function updateParticle(dt) {
     particle.vx += ax * dt;
     particle.vy += ay * dt;
 
+    if (fieldConfig.type === 'uniform-b') {
+        const currentSpeed = Math.sqrt(particle.vx*particle.vx + particle.vy*particle.vy);
+        const initialSpeed = Math.sqrt(2 * particle.initialKE / particle.m);
+        
+        if (currentSpeed > 0) {
+            const correctionFactor = initialSpeed / currentSpeed;
+            particle.vx *= correctionFactor;
+            particle.vy *= correctionFactor;
+        }
+    }
+
     particle.x += particle.vx * dt;
     particle.y += particle.vy * dt;
 
@@ -683,3 +694,4 @@ function drawSimpleHorizontalArrow(x, y) {
     ctx.closePath();
     ctx.fill();
 }
+
